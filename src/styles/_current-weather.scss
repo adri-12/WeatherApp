@@ -1,0 +1,15 @@
+.current-weather {
+    margin-top: 50px;
+    background: #02418E;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 20px;
+    h3 {
+        color: #fff;
+    }
+    .temperature {
+        font-size: 18px;
+        font-weight: 600;
+    }
+}

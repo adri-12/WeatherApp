@@ -1,0 +1,13 @@
+@import '_navbar.scss';
+@import '_current-weather.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+span {
+  color: #fff;
+  font-size: 14px;
+}
