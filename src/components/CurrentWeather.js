@@ -1,17 +1,29 @@
-const CurrentWeather = ({data, transformedTemp}) => {
-    return (
-      <div className="current-weather">
-        <h3>Current Weather</h3>
-        <span>{data.timezone}</span>
-        <div className="weather-icon">
-          <span>{data.weather.icon}</span>
-          {transformedTemp && <span className="temperature">{transformedTemp} °C</span>}
-          <span>Rain and snow showers</span>
+const CurrentWeather = ({ data, transformedTemp, iconUrl }) => {
+  // const today = data.list[0];
+  return (
+    <div className="current-weather">
+      <h3>Current Weather</h3>
+      <span>{data.timezone}</span>
+      <div className="weather-icon-container">
+        <img
+          src={`${iconUrl}${data.weather[0].icon}@2x.png`}
+          alt="weather-icon"
+        />
+        <div>
+          {transformedTemp && (
+            <span className="temperature">{transformedTemp} °C</span>
+          )}
+          <span>{data.weather[0].description}</span>
         </div>
-        <span>Air-Wind-Humidity</span>
-        <span>Visibility</span>
       </div>
-    );
-  };
-  
-  export default CurrentWeather;
+      <div className="weather-information">
+        <div className="wind">
+          <span>Wind</span>
+          <span>{Math.round(data.wind.speed)} mph</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CurrentWeather;

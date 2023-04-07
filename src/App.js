@@ -3,6 +3,7 @@ import CurrentWeather from "./components/CurrentWeather";
 import Navbar from "./components/Navbar";
 import axios from "axios";
 import moment from "moment";
+import Forecast from "./components/Forecast";
 
 function App() {
   const [data, setData] = useState({});
@@ -10,6 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const apiKey = "efbc42bbfeeb1f9c2487a42fe838f727";
+  const iconUrl = "https://openweathermap.org/img/wn/";
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -55,24 +57,32 @@ function App() {
   const currentTime = moment(timezone)
     .utcOffset(timezoneInMinutes)
     .format("h:mm A");
-    console.log(data);
+  console.log(data);
   return (
     <div className="App">
-      <Navbar />
+      <Navbar
+        data={data}
+        searchLocation={searchLocation}
+        setLocation={setLocation}
+        location={location}
+      />
       {loading && <h1>Loading...</h1>}
       {error && <h1>{error}</h1>}
       {!loading && !error && (
         <>
-          <CurrentWeather data={data} location={location} transformedTemp={transformedTemp} />
-          <input
-            type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            onKeyPress={searchLocation}
+          <CurrentWeather
+            iconUrl={iconUrl}
+            data={data}
+            location={location}
+            transformedTemp={transformedTemp}
           />
-          <h1>{data.name}</h1>
+          <h1>
+            {data.name}
+            <span>, {data.sys.country}</span>
+          </h1>
           {transformedTemp && <h1>{transformedTemp} °C</h1>}
           <h1>{data.timezone}</h1>
+          <Forecast data={data} />
         </>
       )}
     </div>
