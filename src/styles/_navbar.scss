@@ -10,7 +10,7 @@ nav {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 60%;
     .left-container {
       display: flex;
       flex-direction: row;
@@ -28,19 +28,74 @@ nav {
         .search-icon {
           position: absolute;
           top: 15px;
-          left: 340px;
+          left: 530px;
           color: grey;
+          cursor: pointer;
         }
       }
     }
     .history-slider {
-      span {
         color: #fff;
-      }
-
+        display: flex;
+        div {
+          text-transform: capitalize;
+      display: flex;
       padding: 0 10px;
       margin-left: 20px;
       border-right: 1px solid #fff;
+      align-items: center;
+        }
+        img {
+          margin-left: 15px;
+          width: 40px;
+        }
+    }
+  }
+  .right-container {
+    display: flex;
+    align-items: center;
+  .light-dark-switch {
+    color: #fff;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    .fa-sun {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    .fa-moon {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+    .fa-toggle-off {
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .fa-toggle-on {
+      font-size: 30px;
+      cursor: pointer;
     }
   }
 }
+}
+
+
+@media screen and (max-width: 768px) {
+  nav {
+  .navbar-container {
+  .left-container {
+    .history-slider {
+      display: none;
+      }
+  .search {
+  .search-icon {
+    left: 225px;
+    top: 15px;
+  }
+}
+  }
+}
+}
+}
+
+

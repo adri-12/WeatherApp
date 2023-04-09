@@ -1,5 +1,8 @@
-@import '_navbar.scss';
-@import '_current-weather.scss';
+@import "_navbar.scss";
+@import "_current-weather.scss";
+@import "_vars.scss";
+@import "_day-forecast-slider.scss";
+@import "_forecast.scss";
 
 * {
   margin: 0;
@@ -8,9 +11,24 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #20bf55;
+  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+}
+h1 {
+  font-size: 42px;
+}
+h2 {
+  font-size: 32px;
 }
 span {
-  color: #fff;
   font-size: 14px;
+}
+.dark {
+background-color: #537895;
+background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+}
+.light {
+  background-color: #20bf55;
+  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
 }

@@ -1,7 +1,22 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMagnifyingGlass,
+  faSun,
+  faMoon,
+  faToggleOff,
+  faToggleOn,
+} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
-const Navbar = ({ location, searchLocation, setLocation }) => {
+const Navbar = ({
+  location,
+  searchLocation,
+  setLocation,
+  searchHistory,
+  iconUrl,
+  isOn,
+  handleToggle,
+}) => {
   return (
     <nav>
       <div className="navbar-container">
@@ -17,10 +32,27 @@ const Navbar = ({ location, searchLocation, setLocation }) => {
             <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
           </div>
           <div className="history-slider">
-            <span>Search History</span>
+            {searchHistory.map((item, index) => (
+              <div key={index}>
+                {item.location}
+                <img
+                  src={`${iconUrl}${item.data.weather[0].icon}@2x.png`}
+                  alt={`weather-icon-${item.data.weather[0].description}`}
+                />
+                <span>{Math.round(item.data.main.temp)}°</span>
+              </div>
+            ))}
           </div>
         </div>
         <div className="right-container">
+          <div className="light-dark-switch">
+            <FontAwesomeIcon icon={faSun} />
+            <FontAwesomeIcon
+              icon={isOn ? faToggleOn : faToggleOff}
+              onClick={handleToggle}
+            />
+            <FontAwesomeIcon icon={faMoon} />
+          </div>
           <select name="temperature">
             <option value="C">°C</option>
             <option value="F">°F</option>
