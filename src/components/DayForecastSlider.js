@@ -1,22 +1,31 @@
 const DayForecastSlider = ({ fiveDaysData, iconUrl }) => {
+  const filteredData = fiveDaysData?.list?.filter(
+    (item, index) => (index + 1) % 8 === 0 // filter every 8th item
+  );
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const date = new Date(fiveDaysData.dt_txt);
+  const dayOfWeek = daysOfWeek[date.getDay()];
+  const dayOfMonth = date.getDate();
+
   return (
     <div className="day-forecast-slider">
       <h2>5 Day Forecast</h2>
       <section>
-        {fiveDaysData.list &&
-          fiveDaysData.list.map((item, i) => (
+        {filteredData &&
+          filteredData.map((item, i) => (
             <div key={i}>
-              <p>{i === 0 ? "Now" : new Date(item.dt * 1000).getHours()}</p>
+              <p>
+                {dayOfWeek} {dayOfMonth}
+              </p>
               <img
                 src={`${iconUrl}${item.weather[0].icon}@2x.png`}
                 alt={`weather-icon-${item.weather[0].description}`}
               />
-              <p>{Math.round(item.main.temp)} °C</p>
+              <span>{Math.round(item.main.temp)} °C</span>
             </div>
           ))}
       </section>
     </div>
   );
 };
-
 export default DayForecastSlider;
