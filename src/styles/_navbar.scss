@@ -4,7 +4,7 @@ nav {
   width: 100%;
   position: absolute;
   top: 0;
-  background: #325573;
+  background: #0f8d83;
   .navbar-container {
     margin: 0 auto;
     align-items: center;
@@ -83,14 +83,15 @@ nav {
 @media screen and (max-width: 768px) {
   nav {
   .navbar-container {
+    width: 90%;
   .left-container {
     .history-slider {
       display: none;
       }
   .search {
   .search-icon {
-    left: 225px;
-    top: 15px;
+    left: 165px;
+    top: 9px;
   }
 }
   }

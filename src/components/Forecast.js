@@ -5,9 +5,15 @@ import CurrentWeather from "./CurrentWeather";
 import axios from "axios";
 import { useEffect } from "react";
 
-const Forecast = ({ data, iconUrl, apiKey, location, fiveDaysData, setFiveDaysData }) => {
-
-
+const Forecast = ({
+  data,
+  iconUrl,
+  apiKey,
+  location,
+  fiveDaysData,
+  setFiveDaysData,
+  handleAddToFavorites,
+}) => {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
@@ -16,11 +22,15 @@ const Forecast = ({ data, iconUrl, apiKey, location, fiveDaysData, setFiveDaysDa
         setFiveDaysData(response.data);
       });
     });
-  }, []);
-  console.log(fiveDaysData);
+  }, [apiKey, setFiveDaysData]);
   return (
     <div className="forecast-container">
-      <CurrentWeather iconUrl={iconUrl} data={data} location={location} />
+      <CurrentWeather
+        iconUrl={iconUrl}
+        data={data}
+        location={location}
+        handleAddToFavorites={handleAddToFavorites}
+      />
       <DayForecastSlider fiveDaysData={fiveDaysData} iconUrl={iconUrl} />
       <DaySummery />
       <TodaysRecommendation />

@@ -1,0 +1,35 @@
+.favorite-list {
+    margin: 70px auto;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    h2 {
+        border-bottom: 2px solid black;
+        margin-top: 10px;
+    }
+    .favorite-items-container {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        div {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    span {
+        display: flex;
+        font-size: 16px;
+        margin-right: 10px;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    .favorite-list {
+        min-width: 90%;
+    }
+}

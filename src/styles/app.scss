@@ -3,6 +3,7 @@
 @import "_vars.scss";
 @import "_day-forecast-slider.scss";
 @import "_forecast.scss";
+@import "_favorite-list.scss";
 
 * {
   margin: 0;
@@ -27,8 +28,28 @@ span {
 .dark {
 background-color: #537895;
 background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+color: #fff;
+.add-favorite {
+  background: #1c3a61;
+  color: #fff;
+  border: 1px solid #fff;
+}
+nav {
+  background: #1c3a61;
+}
 }
 .light {
   background-color: #20bf55;
   background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+}
+
+.app-components {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+.app-components {
+  flex-direction: column;
+}
 }

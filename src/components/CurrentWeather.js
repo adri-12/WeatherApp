@@ -1,7 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-const CurrentWeather = ({ data, iconUrl }) => {
-  // const today = data.list[0];
+const CurrentWeather = ({ data, iconUrl, handleAddToFavorites }) => {
   return (
     <div className="current-weather">
       <div className="flex-col">
@@ -35,6 +32,9 @@ const CurrentWeather = ({ data, iconUrl }) => {
           <span>{data.main.humidity}%</span>
         </li>
       </ul>
+      <button className="add-favorite" onClick={handleAddToFavorites}>
+        Add To Favorite
+      </button>
     </div>
   );
 };
