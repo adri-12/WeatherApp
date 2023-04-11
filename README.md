@@ -1,70 +1,49 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Install Node.js and npm
+Make sure you have Node.js and npm (Node Package Manager) installed on your machine. You can download and install Node.js from the official Node.js website (https://nodejs.org/). npm is included with Node.js, so you don't need to install it separately.
 
-## Available Scripts
+Install Create React App
+Create React App is an officially supported way to create new React applications. You can install Create React App globally on your machine by running the following command in your terminal:
 
-In the project directory, you can run:
+npm install -g create-react-app
 
-### `npm start`
+This will install Create React App globally so that you can use it to create new React apps.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Create a New React App
+Once Create React App is installed, you can use it to create a new React app by running the following command in your terminal:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+create-react-app my-app
 
-### `npm test`
+Navigate to the App Directory
+After the new React app is created, navigate to the app directory using the cd command. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app directory is "my-app"
 
-### `npm run build`
+The command is cd my-app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the Development Server
+Once you are inside the app directory, you can start the development server by running the following command:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This will start the development server and open your React app in your default web browser. 
 
-### `npm run eject`
+You will need to install Axios, SASS, and FontAwesome.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Axios with "npm install axios".
+SASS with "npm install sass".
+FontAwesome with "npm i --save @fortawesome/fontawesome-svg-core"
+                 "npm install --save @fortawesome/free-solid-svg-icons"
+                 "npm install --save @fortawesome/react-fontawesome".
+                 
+The application uses geolocation and you must allow location access from the browser, there is an icon next to the web page address.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+On the first run, the application displays your location data. Data such as city name, country, temperature, humidity, wind strength, minimum and maximum temperature.
+You can search for others locations in the input, and your search history will be displayed besides the search input. The search history will display the name of the location searched, the weather icon, and the temperature.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+You can add your favorite location to a list by clicking the "Add to favorite" button.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Each location you are looking for will also be shown with weather data for 5 days.
+You can toggle through dark and light theme by clicking the button in the navbar.
+The app is mobile responsive so you can use it even on mobile devices.
